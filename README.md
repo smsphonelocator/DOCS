@@ -85,6 +85,9 @@ Essayer une phrase plus longue si besoin
 Oui :
 Français, Anglais, Espagnol, Italien, Allemand, Portugais, Chinois simplifié.
 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
 🇬🇧 English Version
 🔍 1. The GPS command does not work
 
