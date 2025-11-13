@@ -4,53 +4,200 @@
   <meta charset="UTF-8" />
   <title>Politique de confidentialité – SMS Phone Locator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 24px 20px 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.06);
+      box-sizing: border-box;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+      color: #111;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: .4rem; }
+    h2 { font-size: 1.4rem; margin-top: 2rem; border-bottom: 1px solid #e0e0e0; padding-bottom: .3rem;}
+    p { line-height: 1.6; margin: .4rem 0 .8rem; }
+    .meta { color: #666; font-size: .9rem; margin-bottom: 1.2rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .95rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #eef2ff;
+      color: #3730a3;
+      font-weight: 600;
+    }
+    hr { margin: 3rem 0; border: none; border-top: 2px solid #eee; }
+  </style>
 </head>
-<body style="max-width: 900px; margin: 0 auto; font-family: Arial; padding: 20px;">
 
-<h1>Politique de confidentialité – SMS Phone Locator</h1>
-<p><em>Dernière mise à jour : 2025</em></p>
+<body>
+  <main class="page">
 
-<h2>1. Présentation</h2>
-<p>L’application SMS Phone Locator fonctionne entièrement en local sur le téléphone. Aucune donnée n’est transmise à un serveur externe.</p>
+    <!-- ========================================================= -->
+    <!-- VERSION FRANÇAISE -->
+    <!-- ========================================================= -->
 
-<h2>2. Données traitées</h2>
-<table border="1" cellpadding="8" cellspacing="0">
-<tr><th>Donnée</th><th>Usage</th><th>Stockée ?</th><th>Envoyée ?</th></tr>
-<tr><td>Position GPS</td><td>Envoyée par SMS après commande GPS code</td><td>Non</td><td>Oui, par SMS uniquement</td></tr>
-<tr><td>SMS reçus</td><td>Détection des commandes GPS/RING</td><td>Non</td><td>Non</td></tr>
-<tr><td>SMS envoyés</td><td>Réponse automatique</td><td>Non</td><td>Oui, au numéro demandeur</td></tr>
-<tr><td>Flash/caméra</td><td>Activation lors de RING code</td><td>Non</td><td>Non</td></tr>
-</table>
+    <h1>Politique de confidentialité – SMS Phone Locator</h1>
+    <p class="meta">Dernière mise à jour : 2025</p>
 
-<h2>3. Droits</h2>
-<p>L’utilisateur peut retirer les autorisations Android ou désinstaller l’application à tout moment.</p>
+    <h2>1. Présentation</h2>
+    <p>
+      L’application <strong>SMS Phone Locator</strong> permet de localiser un téléphone ou
+      d’activer une sonnerie/flash à distance via l’envoi de commandes SMS.
+      Elle fonctionne entièrement en local sur l'appareil : aucune donnée n’est envoyée vers un serveur.
+    </p>
 
-<h2>4. Contact</h2>
-<p>Email support : support.smsphonelocator@gmail.com</p>
+    <h2>2. Données traitées par l'application</h2>
+    <p>L’application peut accéder aux éléments suivants :</p>
 
-<hr />
+    <table>
+      <tr>
+        <th>Donnée</th>
+        <th>Usage</th>
+        <th>Stockée ?</th>
+        <th>Envoyée ?</th>
+      </tr>
+      <tr>
+        <td><strong>Position GPS</strong></td>
+        <td>Envoyée uniquement au numéro ayant envoyé la commande « GPS code »</td>
+        <td>❌ Non</td>
+        <td>✅ Oui, par SMS uniquement</td>
+      </tr>
+      <tr>
+        <td><strong>SMS reçus</strong></td>
+        <td>Lecture du SMS reçu pour détecter les commandes GPS / RING</td>
+        <td>❌ Non</td>
+        <td>❌ Non</td>
+      </tr>
+      <tr>
+        <td><strong>SMS envoyés</strong></td>
+        <td>Envoi de la réponse automatique avec la localisation ou un accusé de commande</td>
+        <td>❌ Non</td>
+        <td>✅ Oui, au numéro demandeur uniquement</td>
+      </tr>
+      <tr>
+        <td><strong>Flash / Appareil photo</strong></td>
+        <td>Activation du flash lors de la commande « RING code »</td>
+        <td>❌ Non</td>
+        <td>❌ Non</td>
+      </tr>
+    </table>
 
-<h1>Privacy Policy – SMS Phone Locator</h1>
-<p><em>Last updated: 2025</em></p>
+    <h2>3. Aucune collecte ou partage</h2>
+    <p>
+      L’application ne collecte aucune donnée, ne stocke rien et n’envoie rien vers Internet.
+      <br>Elle n’utilise pas de serveur, pas d’API cloud, pas d’analyses, pas de tracking.
+    </p>
 
-<h2>1. About</h2>
-<p>The app works entirely locally. No data is sent to servers.</p>
+    <h2>4. Permissions Android utilisées</h2>
+    <ul>
+      <li><strong>LOCALISATION</strong> — obtenir la position GPS lors d'une commande</li>
+      <li><strong>SMS</strong> — lire la commande et envoyer les réponses</li>
+      <li><strong>CAMÉRA (flash)</strong> — activer le flash lors de RING</li>
+      <li><strong>NOTIFICATIONS</strong> — affichage d'un message d’activité GPS</li>
+    </ul>
 
-<h2>2. Data processed</h2>
-<table border="1" cellpadding="8" cellspacing="0">
-<tr><th>Data</th><th>Usage</th><th>Stored?</th><th>Sent?</th></tr>
-<tr><td>GPS location</td><td>Sent via SMS after GPS code</td><td>No</td><td>Yes, via SMS only</td></tr>
-<tr><td>Incoming SMS</td><td>Command detection</td><td>No</td><td>No</td></tr>
-<tr><td>Outgoing SMS</td><td>Automatic replies</td><td>No</td><td>Yes, to requester</td></tr>
-<tr><td>Flash/camera</td><td>Used during RING code</td><td>No</td><td>No</td></tr>
-</table>
+    <h2>5. Vos droits</h2>
+    <p>
+      Vous pouvez retirer les autorisations Android à tout moment ou désinstaller l'application,
+      ce qui supprime immédiatement tout accès de l'application.
+    </p>
 
-<h2>3. Rights</h2>
-<p>You can revoke permissions or uninstall the app at any time.</p>
+    <h2>6. Contact</h2>
+    <p>Email support : <strong>support.smsphonelocator@gmail.com</strong></p>
 
-<h2>4. Contact</h2>
-<p>Support email: support.smsphonelocator@gmail.com</p>
+    <hr />
 
+    <!-- ========================================================= -->
+    <!-- ENGLISH VERSION -->
+    <!-- ========================================================= -->
+
+    <h1>Privacy Policy – SMS Phone Locator</h1>
+    <p class="meta">Last updated: 2025</p>
+
+    <h2>1. Overview</h2>
+    <p>
+      <strong>SMS Phone Locator</strong> allows remote GPS location and ring activation through SMS commands.
+      The app operates entirely locally on the device: no data is sent to any server.
+    </p>
+
+    <h2>2. Data processed</h2>
+    <p>The app may access the following items:</p>
+
+    <table>
+      <tr>
+        <th>Data</th>
+        <th>Purpose</th>
+        <th>Stored?</th>
+        <th>Sent?</th>
+      </tr>
+      <tr>
+        <td><strong>GPS location</strong></td>
+        <td>Sent only to the phone number that requested « GPS code »</td>
+        <td>No</td>
+        <td>Yes, via SMS only</td>
+      </tr>
+      <tr>
+        <td><strong>Incoming SMS</strong></td>
+        <td>Reads messages to detect GPS/RING commands</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Outgoing SMS</strong></td>
+        <td>Sends automatic replies (location or acknowledgments)</td>
+        <td>No</td>
+        <td>Yes, to the requesting number only</td>
+      </tr>
+      <tr>
+        <td><strong>Flash / Camera</strong></td>
+        <td>Used when executing the RING command</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+    </table>
+
+    <h2>3. No collection or sharing</h2>
+    <p>
+      The app stores nothing, collects nothing, uploads nothing
+      and shares nothing with third parties.
+    </p>
+
+    <h2>4. Android permissions</h2>
+    <ul>
+      <li><strong>LOCATION</strong> — obtain location when requested</li>
+      <li><strong>SMS</strong> — read the command and send replies</li>
+      <li><strong>CAMERA (flash)</strong> — turn on flash during RING</li>
+      <li><strong>NOTIFICATIONS</strong> — GPS activity notification</li>
+    </ul>
+
+    <h2>5. Your rights</h2>
+    <p>
+      You may revoke permissions at any time or uninstall the app,
+      which immediately removes all access.
+    </p>
+
+    <h2>6. Contact</h2>
+    <p>Email support: <strong>support.smsphonelocator@gmail.com</strong></p>
+
+  </main>
 </body>
 </html>
-
