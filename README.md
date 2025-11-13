@@ -1,163 +1,430 @@
-📘 FAQ – SMS Phone Locator
-
-Last update: 2025
-
-🔍 1. La commande GPS ne fonctionne pas : que faire ?
-
-Certains téléphones (Google Pixel, Samsung…) filtrent les SMS très courts comme “GPS code”.
-
-Solution : envoyer une phrase complète, ex :
-“Peux-tu te localiser avec GPS code ?”
-
-L’application détecte la commande où qu’elle soit dans le message.
-
-📡 2. L’application fonctionne-t-elle sans Internet ?
-
-Oui.
-SMS Phone Locator fonctionne uniquement via SMS, sans aucune connexion Internet.
-
-🔐 3. Mes données sont-elles envoyées à des serveurs ?
-
-Non.
-L'application fonctionne 100 % en local.
-Aucune collecte, aucun stockage, aucun partage.
-La position GPS est envoyée uniquement par SMS au numéro demandeur.
-
-🔑 4. À quoi sert le code secret ?
-
-Il sécurise l’application.
-Seuls les messages contenant ce code sont exécutés.
-
-📍 5. Quelle précision GPS puis-je obtenir ?
-
-Extérieur : très précise (quelques mètres)
-
-Intérieur : 10 à 30 m en général
-
-Activer le GPS améliore la précision.
-
-📞 6. L’app fonctionne-t-elle sur un téléphone double SIM ?
-
-Oui.
-Deux points importants :
-
-Au moins une SIM doit pouvoir envoyer/recevoir des SMS.
-Si les deux SIM ont les SMS désactivés → l'app ne peut pas fonctionner.
-
-Certains téléphones permettent de choisir une SIM par défaut pour les SMS.
-Chemin typique :
-Paramètres → Réseau / Cartes SIM → SIM par défaut pour les SMS
-
-🔔 7. Le téléphone sonne-t-il même en mode silencieux ?
-
-Oui.
-La commande RING code active une sonnerie forte + flash LED, même en silencieux.
-
-🔋 8. Pourquoi désactiver “Gérer l’application si inutilisée” ?
-
-Android peut retirer automatiquement des autorisations (SMS, localisation…) après plusieurs semaines d’inactivité.
-Cela peut empêcher l’application de fonctionner.
-
-📨 9. Dois-je définir l’app comme application SMS par défaut ?
-
-Non.
-SMS Phone Locator n’est pas une app de messagerie.
-Elle fonctionne sans être appli SMS par défaut.
-
-🆘 10. Une commande ne fonctionne pas : que vérifier ?
-
-Sur le téléphone perdu :
-
-Autorisation SMS activée
-
-Autorisation Localisation activée (“Toujours autoriser”)
-
-Batterie : Sans restriction
-
-Au moins une SIM active pour les SMS
-
-Le message contient bien GPS code ou RING code
-
-Essayer une phrase plus longue si besoin
-
-🌍 11. L’application est-elle multilingue ?
-
-Oui :
-Français, Anglais, Espagnol, Italien, Allemand, Portugais, Chinois simplifié.
-
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
-
-🇬🇧 English Version
-🔍 1. The GPS command does not work
-
-Some phones (Pixel, Samsung…) filter very short SMS like “GPS code”.
-
-Solution: send a full sentence, e.g.:
-“Can you locate yourself using GPS code?”
-
-The app detects the command anywhere in the message.
-
-📡 2. Does the app work without Internet?
-
-Yes.
-It works 100 % via SMS.
-
-🔐 3. Are any data uploaded or shared?
-
-No.
-The app runs fully locally.
-GPS position is sent only via SMS to the requester.
-
-🔑 4. What is the secret code for?
-
-It secures the app.
-Only messages containing the code will trigger actions.
-
-📍 5. How accurate is the GPS location?
-
-Outdoors: very accurate
-
-Indoors: around 10–30 m
-
-📞 6. Does it work on dual SIM devices?
-
-Yes.
-Requirements:
-
-At least one SIM must send/receive SMS
-
-Some phones require choosing a default SMS SIM
-(Settings → Network / SIM cards → Default SIM for SMS)
-
-🔔 7. Will the phone ring even in silent mode?
-
-Yes.
-RING code forces a loud ringtone + flash.
-
-🔋 8. Why disable “Remove permissions if unused”?
-
-Android may revoke SMS or Location permissions automatically, which breaks the app.
-
-📨 9. Do I need to set it as default SMS app?
-
-No.
-
-🆘 10. Checklist if commands fail
-
-SMS permission allowed
-
-Location: “Always allow”
-
-Battery: Unrestricted
-
-At least one SMS-capable SIM
-
-Message contains “GPS code” or “RING code”
-
-Try sending a longer sentence
-
-🌍 11. Is the app multilingual?
-
-Yes:
-EN, FR, ES, IT, DE, PT, ZH.
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAQ – SMS Phone Locator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+      color: #111;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 0.25rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+    p {
+      line-height: 1.6;
+      margin: 0.3rem 0 0.6rem;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1.2rem;
+    }
+    .lang-switch {
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .lang-switch a {
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      margin-right: 0.4rem;
+      color: #333;
+    }
+    .lang-switch a:hover {
+      background: #f0f0f0;
+    }
+    .qa {
+      margin-bottom: 0.8rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      margin-left: 0.3rem;
+    }
+    ul {
+      margin: 0.3rem 0 0.8rem 1.2rem;
+      padding: 0;
+    }
+    li {
+      margin: 0.15rem 0;
+    }
+    .small {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    /* Grosse séparation FR / EN */
+    .separator {
+      margin: 60px 0 40px;
+      padding: 25px;
+      background: linear-gradient(135deg, #4A6CF7, #6F8BFF);
+      color: white;
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      letter-spacing: 1px;
+    }
+    @media (max-width: 600px) {
+      .page {
+        margin: 0;
+        box-shadow: none;
+        padding: 16px 12px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>FAQ – SMS Phone Locator</h1>
+      <p class="meta">Dernière mise à jour&nbsp;: 2025</p>
+      <div class="lang-switch">
+        Aller à : <a href="#fr">🇫🇷 Français</a><a href="#en">🇬🇧 English</a>
+      </div>
+      <p class="small">
+        Cette FAQ répond aux questions les plus fréquentes sur le fonctionnement de l’application
+        <strong>SMS Phone Locator</strong> (localisation par SMS, commande RING, double SIM, etc.).
+      </p>
+    </header>
+
+    <!-- ====================== FRANÇAIS ====================== -->
+    <section id="fr">
+      <h2>🇫🇷 FAQ (Français)</h2>
+
+      <div class="qa">
+        <h3>1. La commande GPS ne fonctionne pas, que faire ?</h3>
+        <p>
+          Sur certains téléphones (surtout Google Pixel ou Samsung récents), les SMS très courts comme
+          <strong>«&nbsp;GPS code&nbsp;»</strong> peuvent être filtrés ou classés comme messages automatiques.
+        </p>
+        <p>
+          <strong>Solution :</strong> envoyez une phrase complète, par exemple :
+        </p>
+        <p><em>«&nbsp;Peux-tu te localiser avec GPS code&nbsp;?&nbsp;»</em></p>
+        <p>
+          L’application détecte la commande <strong>où qu’elle soit dans le message</strong>, même entourée de texte.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>2. L’application fonctionne-t-elle sans Internet&nbsp;?</h3>
+        <p>
+          Oui. SMS Phone Locator fonctionne <strong>uniquement via SMS</strong>, sans aucune connexion Internet :
+        </p>
+        <ul>
+          <li>Pas besoin d’Internet sur le téléphone perdu</li>
+          <li>Pas besoin d’Internet sur le téléphone qui envoie la commande</li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>3. Mes données sont-elles envoyées sur des serveurs&nbsp;?</h3>
+        <p>
+          Non. L’application fonctionne <strong>100&nbsp;% en local</strong> sur le téléphone.
+        </p>
+        <ul>
+          <li>Aucune collecte de données</li>
+          <li>Aucun stockage externe</li>
+          <li>Aucun envoi vers un serveur</li>
+        </ul>
+        <p>
+          La position GPS est envoyée <strong>uniquement par SMS</strong> au numéro qui a demandé la localisation.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>4. À quoi sert le code secret&nbsp;?</h3>
+        <p>
+          Le code secret sécurise l’application. Seuls les SMS qui contiennent ce code sont pris en compte&nbsp;:
+        </p>
+        <ul>
+          <li>Les commandes valides du type <em>«&nbsp;GPS code&nbsp;»</em> ou <em>«&nbsp;RING code&nbsp;»</em> sont exécutées</li>
+          <li>Tous les autres SMS sont ignorés</li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>5. Quelle précision de localisation puis-je obtenir&nbsp;?</h3>
+        <p>La précision dépend des capteurs du téléphone perdu et de l’environnement :</p>
+        <ul>
+          <li><strong>À l’extérieur :</strong> précision de quelques mètres</li>
+          <li><strong>À l’intérieur :</strong> souvent entre 10 et 30&nbsp;m</li>
+        </ul>
+        <p>Activer le GPS sur le téléphone perdu améliore la précision.</p>
+      </div>
+
+      <div class="qa">
+        <h3>6. L’application fonctionne-t-elle sur un téléphone double SIM&nbsp;?</h3>
+        <p>Oui, l’application est compatible avec les téléphones <strong>double SIM</strong>.</p>
+        <p><strong>Deux points importants :</strong></p>
+        <ul>
+          <li>
+            Au moins <strong>une SIM</strong> doit pouvoir <strong>envoyer et recevoir des SMS</strong>.  
+            Si les SMS sont désactivés sur les deux SIM, l’application ne peut pas fonctionner.
+          </li>
+          <li>
+            Sur certains modèles (Samsung, Xiaomi, Pixel, OnePlus…), il est possible de choisir une
+            <strong>SIM par défaut pour les SMS</strong> :
+            <br />
+            <span class="small">Chemin typique : Paramètres → Réseau / Cartes SIM → SIM par défaut pour les SMS</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>7. Le téléphone sonne-t-il même en mode silencieux&nbsp;?</h3>
+        <p>
+          Oui. La commande <strong>RING code</strong> déclenche :
+        </p>
+        <ul>
+          <li>une sonnerie forte</li>
+          <li>le flash de l’appareil photo</li>
+          <li>les vibrations</li>
+        </ul>
+        <p>… même si le téléphone est en mode silencieux.</p>
+      </div>
+
+      <div class="qa">
+        <h3>8. Pourquoi désactiver «&nbsp;Gérer l’application si inutilisée&nbsp;»&nbsp;?</h3>
+        <p>
+          Android peut retirer automatiquement des autorisations (SMS, localisation…) après plusieurs semaines
+          d’inactivité. Cela peut bloquer le fonctionnement de l’application.
+        </p>
+        <p>
+          Il est recommandé de désactiver cette option dans les paramètres de l’application sur le téléphone.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>9. Dois-je définir SMS Phone Locator comme application SMS par défaut&nbsp;?</h3>
+        <p>
+          Non. SMS Phone Locator n’est pas une application de messagerie classique.  
+          Elle fonctionne normalement <strong>sans être définie comme appli SMS par défaut</strong>.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>10. Une commande ne fonctionne toujours pas : que vérifier&nbsp;?</h3>
+        <p>Sur le téléphone perdu :</p>
+        <ul>
+          <li>Autorisation <strong>SMS</strong> : activée</li>
+          <li>Autorisation <strong>Localisation</strong> : «&nbsp;Toujours autoriser&nbsp;»</li>
+          <li>Batterie : mode <strong>sans restriction</strong></li>
+          <li>Au moins une SIM active pour les SMS</li>
+          <li>Le message contient <strong>GPS code</strong> ou <strong>RING code</strong></li>
+        </ul>
+        <p>
+          Si nécessaire, envoyer un message plus long, par exemple :
+          <em>«&nbsp;Peux-tu te localiser avec GPS code&nbsp;?&nbsp;»</em>
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>11. L’application est-elle multilingue&nbsp;?</h3>
+        <p>
+          Oui. L’application (interface et SMS automatiques) est disponible en :
+        </p>
+        <ul>
+          <li>Français</li>
+          <li>Anglais</li>
+          <li>Espagnol</li>
+          <li>Italien</li>
+          <li>Allemand</li>
+          <li>Portugais</li>
+          <li>Chinois simplifié</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======== GROSSE SÉPARATION VISUELLE AVANT LA VERSION ANGLAISE ======== -->
+    <div class="separator">
+      🇬🇧 English version below
+    </div>
+
+    <!-- ====================== ENGLISH ====================== -->
+    <section id="en">
+      <h2>🇬🇧 FAQ (English)</h2>
+
+      <div class="qa">
+        <h3>1. The GPS command does not work, what should I do?</h3>
+        <p>
+          Some phones (especially Google Pixel or recent Samsung models) may filter very short SMS messages such as
+          <strong>“GPS code”</strong>.
+        </p>
+        <p><strong>Solution:</strong> send a full sentence, for example:</p>
+        <p><em>“Can you locate yourself using GPS code?”</em></p>
+        <p>
+          The app detects the command <strong>anywhere inside the message</strong>, even if there is text before or after it.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>2. Does the app work without Internet?</h3>
+        <p>
+          Yes. SMS Phone Locator works <strong>entirely via SMS</strong>, with no Internet connection required:
+        </p>
+        <ul>
+          <li>No Internet needed on the lost phone</li>
+          <li>No Internet needed on the phone sending the command</li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>3. Are any data uploaded or shared to servers?</h3>
+        <p>
+          No. The app is <strong>100% local</strong>.
+        </p>
+        <ul>
+          <li>No data collection</li>
+          <li>No external storage</li>
+          <li>No upload to any server</li>
+        </ul>
+        <p>
+          GPS location is sent <strong>only via SMS</strong> to the phone number that requested it.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>4. What is the secret code for?</h3>
+        <p>
+          The secret code protects the app. Only messages that contain this code will trigger actions:
+        </p>
+        <ul>
+          <li>Valid commands like <em>“GPS code”</em> or <em>“RING code”</em> are executed</li>
+          <li>All other SMS messages are ignored</li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>5. How accurate is the GPS position?</h3>
+        <p>Accuracy depends on the lost phone and environment:</p>
+        <ul>
+          <li><strong>Outdoors:</strong> very accurate (a few meters)</li>
+          <li><strong>Indoors:</strong> usually around 10–30 m</li>
+        </ul>
+        <p>Enabling GPS on the lost phone improves accuracy.</p>
+      </div>
+
+      <div class="qa">
+        <h3>6. Does the app work on dual SIM phones?</h3>
+        <p>Yes, SMS Phone Locator works on <strong>dual SIM</strong> devices.</p>
+        <p><strong>Two important points:</strong></p>
+        <ul>
+          <li>
+            At least <strong>one SIM</strong> must be able to <strong>send and receive SMS</strong>.  
+            If SMS are disabled on both SIMs, the app cannot function.
+          </li>
+          <li>
+            Some phones (Pixel, Samsung, Xiaomi, OnePlus, etc.) require choosing a
+            <strong>default SIM for SMS</strong>:
+            <br />
+            <span class="small">Typical path: Settings → Network / SIM cards → Default SIM for SMS</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="qa">
+        <h3>7. Will the phone ring even when it is in silent mode?</h3>
+        <p>
+          Yes. The <strong>RING code</strong> command triggers:
+        </p>
+        <ul>
+          <li>a loud ringtone</li>
+          <li>camera flash</li>
+          <li>vibration</li>
+        </ul>
+        <p>… even if the phone is set to silent mode.</p>
+      </div>
+
+      <div class="qa">
+        <h3>8. Why should I disable “Remove permissions if unused”?</h3>
+        <p>
+          Android may automatically revoke permissions (SMS, Location, etc.) after several weeks of inactivity.
+          This can silently break the app.
+        </p>
+        <p>
+          It is recommended to disable this option in the app’s settings on the device.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>9. Do I need to set SMS Phone Locator as the default SMS app?</h3>
+        <p>
+          No. SMS Phone Locator is not a full messaging app.  
+          It works correctly <strong>without</strong> being set as the default SMS application.
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>10. Commands still do not work, what should I check?</h3>
+        <p>On the lost phone:</p>
+        <ul>
+          <li>SMS permission: <strong>allowed</strong></li>
+          <li>Location permission: <strong>“Always allow”</strong></li>
+          <li>Battery mode: <strong>Unrestricted</strong></li>
+          <li>At least one SIM active for SMS</li>
+          <li>The message contains <strong>GPS code</strong> or <strong>RING code</strong></li>
+        </ul>
+        <p>
+          If necessary, send a longer sentence, for example:
+          <em>“Can you locate yourself using GPS code?”</em>
+        </p>
+      </div>
+
+      <div class="qa">
+        <h3>11. Is the app multilingual?</h3>
+        <p>
+          Yes. The app (interface and automatic SMS responses) is available in:
+        </p>
+        <ul>
+          <li>French</li>
+          <li>English</li>
+          <li>Spanish</li>
+          <li>Italian</li>
+          <li>German</li>
+          <li>Portuguese</li>
+          <li>Simplified Chinese</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
