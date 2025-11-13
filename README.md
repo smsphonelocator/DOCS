@@ -2,262 +2,159 @@
 
 Last update: 2025
 
-Cette FAQ répond aux questions les plus fréquentes concernant l'utilisation de l’application SMS Phone Locator.
+🔍 1. La commande GPS ne fonctionne pas : que faire ?
 
-🔍 1. La commande GPS ne fonctionne pas, que faire ?
+Certains téléphones (Google Pixel, Samsung…) filtrent les SMS très courts comme “GPS code”.
 
-Sur certains téléphones (surtout Google Pixel ou Samsung récents), les SMS trop courts comme “GPS code” peuvent être filtrés ou classés comme messages automatiques.
-
-👉 Solution :
-Envoyez plutôt une phrase complète, par exemple :
+Solution : envoyer une phrase complète, ex :
 “Peux-tu te localiser avec GPS code ?”
 
-L’application détecte le code où qu’il soit dans le message.
+L’application détecte la commande où qu’elle soit dans le message.
 
 📡 2. L’application fonctionne-t-elle sans Internet ?
 
 Oui.
-L'application fonctionne entièrement en SMS, sans aucune connexion Internet.
+SMS Phone Locator fonctionne uniquement via SMS, sans aucune connexion Internet.
 
-Pas besoin d’Internet sur le téléphone perdu
-
-Pas besoin d’Internet sur le téléphone qui envoie la commande
-
-🔐 3. Est-ce que mes données sont envoyées à des serveurs ?
+🔐 3. Mes données sont-elles envoyées à des serveurs ?
 
 Non.
-L'application fonctionne 100 % en local sur le téléphone.
+L'application fonctionne 100 % en local.
+Aucune collecte, aucun stockage, aucun partage.
+La position GPS est envoyée uniquement par SMS au numéro demandeur.
 
-Aucune donnée n’est stockée
+🔑 4. À quoi sert le code secret ?
 
-Aucune donnée n’est envoyée
+Il sécurise l’application.
+Seuls les messages contenant ce code sont exécutés.
 
-Aucune donnée n’est partagée
+📍 5. Quelle précision GPS puis-je obtenir ?
 
-La position GPS est envoyée uniquement au numéro demandeur, par SMS.
+Extérieur : très précise (quelques mètres)
 
-🔑 4. À quoi sert le “code secret” ?
+Intérieur : 10 à 30 m en général
 
-Le code secret sécurise l’application.
+Activer le GPS améliore la précision.
 
-Seuls les SMS contenant ce code sont exécutés
-
-Tous les autres messages sont ignorés
-
-📍 5. Quelle précision de localisation puis-je obtenir ?
-
-La précision dépend du téléphone perdu :
-
-À l’extérieur : quelques mètres
-
-À l’intérieur : parfois 10–30 m
-
-Astuce : si le GPS du téléphone perdu est activé, la précision est meilleure.
-
-📞 6. L'application fonctionne-t-elle avec deux cartes SIM (double SIM) ?
+📞 6. L’app fonctionne-t-elle sur un téléphone double SIM ?
 
 Oui.
-Mais deux points importants :
+Deux points importants :
 
-1. Au moins une SIM doit pouvoir recevoir et envoyer des SMS
+Au moins une SIM doit pouvoir envoyer/recevoir des SMS.
+Si les deux SIM ont les SMS désactivés → l'app ne peut pas fonctionner.
 
-Si une seule SIM gère les SMS → c’est cette SIM qui sera utilisée
-
-Si les SMS sont désactivés sur les deux SIM → l’application ne peut pas fonctionner
-
-2. Certains téléphones permettent de choisir une SIM SMS par défaut
-
-(Samsung, Xiaomi, Pixel, OnePlus…)
-
+Certains téléphones permettent de choisir une SIM par défaut pour les SMS.
 Chemin typique :
 Paramètres → Réseau / Cartes SIM → SIM par défaut pour les SMS
 
-Tant qu’une SIM peut envoyer/recevoir des SMS, l’application fonctionne normalement.
-
-🔔 7. Le téléphone sonne-t-il même s’il est en silencieux ?
+🔔 7. Le téléphone sonne-t-il même en mode silencieux ?
 
 Oui.
-La commande RING code force :
+La commande RING code active une sonnerie forte + flash LED, même en silencieux.
 
-une sonnerie forte
+🔋 8. Pourquoi désactiver “Gérer l’application si inutilisée” ?
 
-le flash LED
+Android peut retirer automatiquement des autorisations (SMS, localisation…) après plusieurs semaines d’inactivité.
+Cela peut empêcher l’application de fonctionner.
 
-des vibrations
-
-même si le téléphone est en mode silencieux.
-
-🔋 8. Pourquoi dois-je désactiver “Gérer l’application si inutilisée” ?
-
-Certains téléphones Android retirent automatiquement les autorisations (SMS, localisation…) après quelques semaines si l’application n’est pas utilisée.
-
-Cela peut bloquer le fonctionnement.
-
-👉 Solution : désactiver l’option :
-Paramètres → Applications → SMS Phone Locator → Gérer l'appli si inutilisée → Désactiver
-
-📨 9. Dois-je définir SMS Phone Locator comme application SMS par défaut ?
+📨 9. Dois-je définir l’app comme application SMS par défaut ?
 
 Non.
-L’application ne remplace pas l’application de messagerie normale.
+SMS Phone Locator n’est pas une app de messagerie.
+Elle fonctionne sans être appli SMS par défaut.
 
-Elle fonctionne très bien sans être définie comme app SMS par défaut.
-
-🆘 10. La commande ne fonctionne toujours pas, que vérifier ?
+🆘 10. Une commande ne fonctionne pas : que vérifier ?
 
 Sur le téléphone perdu :
 
-SMS autorisés
+Autorisation SMS activée
 
-Localisation autorisée
+Autorisation Localisation activée (“Toujours autoriser”)
 
-“Lorsque l’appli est utilisée”
+Batterie : Sans restriction
 
-puis “Toujours autoriser”
+Au moins une SIM active pour les SMS
 
-Batterie : sans restriction
+Le message contient bien GPS code ou RING code
 
-Au moins une SIM activée pour les SMS
-
-Le message contient GPS code ou RING code quelque part
-
-Essayer un message plus long :
-“Peux-tu te localiser avec GPS code ?”
+Essayer une phrase plus longue si besoin
 
 🌍 11. L’application est-elle multilingue ?
 
-Oui.
-Elle fonctionne dans les langues suivantes :
+Oui :
+Français, Anglais, Espagnol, Italien, Allemand, Portugais, Chinois simplifié.
 
-Français
+🇬🇧 English Version
+🔍 1. The GPS command does not work
 
-Anglais
+Some phones (Pixel, Samsung…) filter very short SMS like “GPS code”.
 
-Espagnol
-
-Italien
-
-Allemand
-
-Portugais
-
-Chinois simplifié
-
-Les SMS automatiques sont traduits aussi.
-
-🇬🇧 FAQ – SMS Phone Locator (English Version)
-
-Last update: 2025
-
-🔍 1. The GPS command does not work, what should I do?
-
-Some phones (especially Google Pixel or recent Samsung models) may filter very short messages like “GPS code”.
-
-👉 Solution:
-Send a full sentence instead, such as:
+Solution: send a full sentence, e.g.:
 “Can you locate yourself using GPS code?”
 
-The app detects the code anywhere in the message.
+The app detects the command anywhere in the message.
 
 📡 2. Does the app work without Internet?
 
 Yes.
-The app works completely via SMS, without any Internet connection.
-
-No Internet required on the lost phone
-
-No Internet required on the phone sending the command
+It works 100 % via SMS.
 
 🔐 3. Are any data uploaded or shared?
 
 No.
-The app works 100 % locally.
-
-No storage
-
-No upload
-
-No sharing
-
-GPS location is sent only via SMS to the requesting number.
+The app runs fully locally.
+GPS position is sent only via SMS to the requester.
 
 🔑 4. What is the secret code for?
 
 It secures the app.
+Only messages containing the code will trigger actions.
 
-Only messages containing the secret code will trigger actions.
-
-📍 5. How accurate is the GPS position?
-
-It depends on the lost phone:
+📍 5. How accurate is the GPS location?
 
 Outdoors: very accurate
 
-Indoors: usually 10–30 m
+Indoors: around 10–30 m
 
-If GPS is enabled, accuracy improves.
+📞 6. Does it work on dual SIM devices?
 
-📞 6. Does the app work on dual SIM phones?
+Yes.
+Requirements:
 
-Yes — with two conditions:
+At least one SIM must send/receive SMS
 
-1. At least one SIM must be able to send/receive SMS
-
-If both SIMs have SMS disabled → the app cannot work.
-
-2. Some phones allow choosing a default SIM for SMS
-
-(Pixel, Samsung, Xiaomi, OnePlus…)
-
-Path example:
-Settings → Network / SIM cards → Default SIM for SMS
-
-As long as one SIM handles SMS, the app works normally.
+Some phones require choosing a default SMS SIM
+(Settings → Network / SIM cards → Default SIM for SMS)
 
 🔔 7. Will the phone ring even in silent mode?
 
 Yes.
-RING code triggers:
-
-a loud ringtone
-
-camera flash
-
-vibration
-
-even if the phone is muted.
+RING code forces a loud ringtone + flash.
 
 🔋 8. Why disable “Remove permissions if unused”?
 
-Android sometimes removes permissions after weeks without use.
-This may break the app.
+Android may revoke SMS or Location permissions automatically, which breaks the app.
 
-Solution: turn it off:
-Settings → Apps → SMS Phone Locator → Remove permissions if unused → Off
-
-📨 9. Do I need to set the app as the default SMS app?
+📨 9. Do I need to set it as default SMS app?
 
 No.
-It does not replace your regular messaging app.
-It works without being the default SMS app.
 
-🆘 10. Commands still not working, what should I check?
-
-On the lost phone:
+🆘 10. Checklist if commands fail
 
 SMS permission allowed
 
-Location permission allowed
+Location: “Always allow”
 
-Battery set to Unrestricted
+Battery: Unrestricted
 
-At least one SIM active for SMS
+At least one SMS-capable SIM
 
 Message contains “GPS code” or “RING code”
 
-Try sending a longer message
+Try sending a longer sentence
 
 🌍 11. Is the app multilingual?
 
 Yes:
-English, French, Spanish, Italian, German, Portuguese, Simplified Chinese.
+EN, FR, ES, IT, DE, PT, ZH.
