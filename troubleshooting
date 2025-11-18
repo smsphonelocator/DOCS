@@ -1,1 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Troubleshooting – SMS Phone Locator (Google Pixel & Xiaomi)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Guide de dépannage pour les utilisateurs de SMS Phone Locator sur Google Pixel et Xiaomi (désactivation RCS/Chat, autorisations SMS, etc.)." />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 16px;
+      background: #fafafa;
+      color: #222;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+    h3 {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+    }
+    p {
+      margin: 0.4rem 0;
+    }
+    ul, ol {
+      margin: 0.3rem 0 0.8rem 1.4rem;
+    }
+    code {
+      font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+      background: #eee;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+    .note {
+      border-left: 4px solid #1976d2;
+      background: #e3f2fd;
+      padding: 8px 12px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .warning {
+      border-left: 4px solid #d32f2f;
+      background: #ffebee;
+      padding: 8px 12px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .ok {
+      border-left: 4px solid #2e7d32;
+      background: #e8f5e9;
+      padding: 8px 12px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    a {
+      color: #1976d2;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .small {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛠️ Troubleshooting – SMS Phone Locator<br /><span class="small">Google Pixel &amp; Xiaomi (RCS / Chat / SMS bloqués)</span></h1>
+
+  <p>
+    Certains téléphones, en particulier les <strong>Google Pixel</strong> et les <strong>Xiaomi</strong>, 
+    proposent des fonctions avancées pour les SMS : <strong>Chat / RCS</strong>, filtrage anti-spam, 
+    restrictions de batterie, etc.  
+    Ces options peuvent parfois empêcher <b>SMS Phone Locator</b> de recevoir ou d’envoyer les SMS de commande.
+  </p>
+
+  <div class="ok">
+    <strong>Bon à savoir :</strong> SMS Phone Locator fonctionne avec des <b>SMS classiques</b> uniquement.<br />
+    Si le téléphone essaie d’utiliser le mode <b>Chat / RCS</b>, les commandes du type
+    <code>GPS &lt;code secret&gt;</code> ou <code>RING &lt;code secret&gt;</code> peuvent ne pas être prises en compte.
+  </div>
+
+  <h2>Sommaire</h2>
+  <ul>
+    <li><a href="#prerequis">1. Vérifications générales</a></li>
+    <li><a href="#pixel">2. Google Pixel : désactiver Chat / RCS &amp; vérifier les SMS</a></li>
+    <li><a href="#xiaomi">3. Xiaomi : autorisations, batterie &amp; anti-spam</a></li>
+    <li><a href="#tests">4. Tests conseillés avec SMS Phone Locator</a></li>
+  </ul>
+
+  <hr />
+
+  <h2 id="prerequis">1. Vérifications générales</h2>
+
+  <p>Avant de rentrer dans les réglages spécifiques Pixel ou Xiaomi, vérifier ces points :</p>
+
+  <ol>
+    <li>Le téléphone cible (celui à localiser) est bien <strong>allumé</strong> et a du <strong>réseau</strong>.</li>
+    <li>La carte SIM du téléphone cible peut envoyer et recevoir des SMS (tester un SMS normal).</li>
+    <li>L’application <b>SMS Phone Locator</b> est bien installée et configurée :</li>
+  </ol>
+
+  <ul>
+    <li>Un <b>code secret</b> a été défini dans l’application.</li>
+    <li>Les autorisations suivantes sont <b>acceptées</b> :
+      <ul>
+        <li>Localisation (position)</li>
+        <li>SMS</li>
+        <li>Notifications</li>
+        <li>Caméra (pour le flash)</li>
+      </ul>
+    </li>
+    <li>Dans les paramètres Android : l’option
+      <i>“Gérer automatiquement les autorisations pour les applis inutilisées”</i> est <strong>désactivée</strong>
+      pour SMS Phone Locator.
+    </li>
+  </ul>
+
+  <div class="note">
+    Si tout cela est correct, mais que <b>les SMS de commande ne sont pas reconnus</b> ou que <b>la réponse n’arrive pas</b>, 
+    il est probable que <b>RCS / Chat ou une fonction de filtrage</b> soit en cause.
+  </div>
+
+  <hr />
+
+  <h2 id="pixel">2. Google Pixel – Désactiver Chat / RCS &amp; vérifier les SMS</h2>
+
+  <p>
+    Sur les Google Pixel, l’application <b>Messages</b> de Google utilise souvent les fonctionnalités 
+    <b>Chat (RCS)</b>. Il faut les désactiver pour que les commandes SMS restent bien des SMS classiques.
+  </p>
+
+  <h3>2.1. Désactiver les fonctionnalités de Chat / RCS</h3>
+
+  <ol>
+    <li>Ouvrir l’application <b>Messages</b> (icône bleue de Google).</li>
+    <li>En haut à droite, toucher le bouton <b>⋮</b> (trois points) puis <b>Paramètres</b>.</li>
+    <li>Aller dans <b>Fonctionnalités de chat</b> (ou <b>Fonctionnalités de discussion</b> / <b>Chat</b> selon la version).</li>
+    <li>Mettre l’option principale sur <b>Désactivé</b> :
+      <ul>
+        <li>Décochez ou désactivez <i>“Activer les fonctionnalités de chat”</i>.</li>
+      </ul>
+    </li>
+    <li>Si une option similaire existe :
+      <ul>
+        <li><i>“Envoyer par SMS si le chat n’est pas disponible”</i> → l’activer peut aider.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="ok">
+    Après avoir désactivé le Chat / RCS, tous les messages partiront en <b>SMS classiques</b>, 
+    ce qui est indispensable pour SMS Phone Locator.
+  </div>
+
+  <h3>2.2. Vérifier l’application SMS par défaut</h3>
+
+  <ol>
+    <li>Ouvrir les <b>Paramètres</b> du téléphone.</li>
+    <li>Aller dans <b>Applications</b> &gt; <b>Applications par défaut</b>.</li>
+    <li>Choisir <b>Application SMS</b> (ou <b>Appli de SMS</b>).</li>
+    <li>Vérifier que l’application utilisée pour envoyer le SMS de commande
+      (souvent <b>Messages</b>) est bien définie comme <b>par défaut</b>.
+    </li>
+  </ol>
+
+  <h3>2.3. Vérifier la protection anti-spam</h3>
+
+  <p>Google peut marquer certains SMS comme spam et les déplacer dans un dossier séparé.</p>
+
+  <ol>
+    <li>Ouvrir l’application <b>Messages</b>.</li>
+    <li>En haut à droite : <b>⋮</b> &gt; <b>Spam et conversations bloquées</b>.</li>
+    <li>Vérifier que les réponses de <b>SMS Phone Locator</b> ne sont pas classées comme spam.</li>
+    <li>Si c’est le cas, les marquer comme <b>“Non spam”</b>.</li>
+  </ol>
+
+  <h3>2.4. Vérifier les numéros bloqués</h3>
+
+  <ol>
+    <li>Ouvrir <b>Messages</b> &gt; <b>⋮</b> &gt; <b>Paramètres</b>.</li>
+    <li>Aller dans <b>Numéros bloqués</b> ou <b>Bloquer &amp; filtrer</b>.</li>
+    <li>Vérifier que le numéro qui envoie la commande (le téléphone demandeur)
+        n’est pas dans la liste.</li>
+  </ol>
+
+  <h3>2.5. Vérifier SIM 1 / SIM 2 (double SIM)</h3>
+
+  <ol>
+    <li>Ouvrir les <b>Paramètres</b> &gt; <b>Réseau et Internet</b> &gt; <b>Cartes SIM</b>.</li>
+    <li>Vérifier quelle SIM est utilisée pour :
+      <ul>
+        <li>les <b>appels</b>,</li>
+        <li>les <b>SMS</b>,</li>
+        <li>les <b>données mobiles</b> (facultatif pour SMS Phone Locator).</li>
+      </ul>
+    </li>
+    <li>
+      Quand vous envoyez <code>GPS &lt;code secret&gt;</code>, assurez-vous que c’est bien 
+      la SIM configurée pour les SMS qui est utilisée.
+    </li>
+  </ol>
+
+  <hr />
+
+  <h2 id="xiaomi">3. Xiaomi – Autorisations, batterie &amp; anti-spam</h2>
+
+  <p>
+    Les téléphones Xiaomi (MIUI) disposent de nombreuses optimisations 
+    (batterie, sécurité, autostart…) qui peuvent empêcher l’application de 
+    recevoir les SMS ou d’exécuter les actions en arrière-plan.
+  </p>
+
+  <h3>3.1. Autoriser toutes les permissions pour SMS Phone Locator</h3>
+
+  <ol>
+    <li>Ouvrir les <b>Paramètres</b>.</li>
+    <li>Aller dans <b>Applications</b> &gt; <b>Gérer les applications</b>.</li>
+    <li>Chercher <b>SMS Phone Locator</b> dans la liste et appuyer dessus.</li>
+    <li>Aller dans <b>Autorisations</b> puis vérifier :
+      <ul>
+        <li><b>SMS</b> → Autoriser</li>
+        <li><b>Localisation</b> → Autoriser (<i>Toujours</i> de préférence)</li>
+        <li><b>Appareil photo</b> (pour le flash) → Autoriser</li>
+        <li><b>Notifications</b> → Autoriser</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>3.2. Autostart / Démarrage automatique</h3>
+
+  <p>Certains Xiaomi coupent les applis en arrière-plan. Il est important d’autoriser le démarrage automatique.</p>
+
+  <ol>
+    <li>Ouvrir l’application <b>Sécurité</b> (icône verte).</li>
+    <li>Aller dans <b>Autorisations</b> &gt; <b>Démarrage automatique</b> (Autostart).</li>
+    <li>Activer le bouton pour <b>SMS Phone Locator</b>.</li>
+  </ol>
+
+  <h3>3.3. Mode batterie : aucune restriction</h3>
+
+  <ol>
+    <li>Ouvrir les <b>Paramètres</b>.</li>
+    <li>Aller dans <b>Batterie</b> &gt; <b>Économie de batterie pour les applications</b>
+        (ou similaire selon la version MIUI).</li>
+    <li>Choisir <b>SMS Phone Locator</b>.</li>
+    <li>Sélectionner <b>Aucune restriction</b> (ne pas l’optimiser).</li>
+  </ol>
+
+  <div class="warning">
+    Si l’appli est trop optimisée, Xiaomi peut l’arrêter complètement.
+    SMS Phone Locator ne pourra alors plus traiter les SMS en arrière-plan.
+  </div>
+
+  <h3>3.4. Anti-spam &amp; blocage de SMS</h3>
+
+  <p>Xiaomi dispose aussi de filtres anti-spam dans l’application <b>Sécurité</b> ou dans l’app SMS.</p>
+
+  <ol>
+    <li>Ouvrir l’application <b>Sécurité</b>.</li>
+    <li>Aller dans <b>Blocage d’appels</b> / <b>Filtrage SMS</b> (nom variable selon MIUI).</li>
+    <li>Vérifier que le numéro qui envoie les commandes n’est pas dans les listes bloquées.</li>
+    <li>Désactiver temporairement certaines options de filtrage si nécessaire.</li>
+  </ol>
+
+  <h3>3.5. Vérifier l’application SMS par défaut (Xiaomi)</h3>
+
+  <ol>
+    <li>Ouvrir les <b>Paramètres</b>.</li>
+    <li>Aller dans <b>Applications</b> &gt; <b>Applications par défaut</b>.</li>
+    <li>Choisir <b>Application SMS</b>.</li>
+    <li>Vérifier que l’app utilisée pour envoyer les commandes
+      (par exemple Messages Google ou l’app SMS Xiaomi) est bien définie comme <b>par défaut</b>.
+    </li>
+  </ol>
+
+  <h3>3.6. RCS / Messages enrichis (si Google Messages est utilisé)</h3>
+
+  <p>Si l’utilisateur Xiaomi utilise aussi l’app <b>Messages</b> de Google :</p>
+
+  <ul>
+    <li>Suivre les mêmes étapes que pour <a href="#pixel">Google Pixel (section 2.1)</a>
+        pour <b>désactiver les fonctionnalités de Chat / RCS</b>.</li>
+  </ul>
+
+  <hr />
+
+  <h2 id="tests">4. Tests conseillés avec SMS Phone Locator</h2>
+
+  <p>Une fois les réglages effectués, voici un protocole simple pour vérifier que tout fonctionne.</p>
+
+  <h3>4.1. Test de commande GPS</h3>
+
+  <ol>
+    <li>Depuis un autre téléphone (demandeur), envoyer un SMS au téléphone cible avec la commande :
+      <br /><code>GPS &lt;votre code secret&gt;</code>
+    </li>
+    <li>Sur le téléphone cible :
+      <ul>
+        <li>Vérifier que le SMS est bien reçu dans l’application SMS (et pas dans un dossier spam).</li>
+      </ul>
+    </li>
+    <li>Après quelques secondes, le téléphone demandeur doit recevoir :
+      <ul>
+        <li>Un <b>accusé</b> de prise en compte de la demande.</li>
+        <li>Un second SMS avec un lien <b>Google Maps</b> contenant la position et le niveau de batterie.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>4.2. Si l’accusé arrive mais pas la localisation</h3>
+
+  <ul>
+    <li>Vérifier que le <b>GPS / Localisation</b> est activé sur le téléphone cible.</li>
+    <li>Vérifier que SMS Phone Locator a l’autorisation <b>Localisation</b> et qu’elle n’a pas été retirée par Android
+        (gestion des applis inutilisées).</li>
+    <li>Essayer à nouveau à l’extérieur ou près d’une fenêtre pour améliorer la réception GPS.</li>
+  </ul>
+
+  <h3>4.3. Test de commande RING</h3>
+
+  <ol>
+    <li>Depuis un autre téléphone, envoyer :
+      <br /><code>RING &lt;votre code secret&gt;</code>
+    </li>
+    <li>Le téléphone cible doit :
+      <ul>
+        <li>Sonner fortement pendant quelques secondes.</li>
+        <li>Faire clignoter le flash (si disponible et autorisé).</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="note">
+    Si malgré ce guide les SMS ne fonctionnent toujours pas, il est recommandé de :
+    <ul>
+      <li>Recommencer les tests avec un autre téléphone demandeur (autre opérateur si possible).</li>
+      <li>Vérifier auprès de l’opérateur qu’aucun blocage de SMS n’est en place (forfaits data uniquement, blocage international, etc.).</li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <p class="small">
+    Dernière mise à jour de cette page : 2025<br />
+    Ce guide est fourni à titre indicatif. Les intitulés exacts des menus peuvent varier selon la version d’Android, de MIUI ou de l’application Messages installée.
+  </p>
+
+</body>
+</html>
 
