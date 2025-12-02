@@ -35,4 +35,243 @@
       padding: 20px;
       background: linear-gradient(135deg, #4A6CF7, #6F8BFF);
       border-radius: 12px;
-      box-sh
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      color: white;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- ========================================================= -->
+    <!-- VERSION FRANÇAISE -->
+    <!-- ========================================================= -->
+
+    <h1>FAQ – SMS Phone Locator</h1>
+    <p class="meta">Dernière mise à jour : 2025</p>
+
+    <p>
+      Cette page répond aux questions les plus fréquentes sur
+      <strong>SMS Phone Locator</strong> : fonctionnement par SMS, autorisations,
+      double SIM, précision GPS, etc.
+      Pour des problèmes techniques plus complexes (Google Pixel, Xiaomi, RCS/Chat…),
+      consultez la page <a href="troubleshooting.html">Dépannage / Troubleshooting</a>.
+    </p>
+
+    <h2>1. Comment fonctionne SMS Phone Locator ?</h2>
+    <p>
+      L’application reste en veille sur le téléphone que vous voulez protéger.
+      Lorsque celui-ci reçoit un SMS contenant votre
+      <strong>code secret</strong> et une commande, elle exécute l’action :
+    </p>
+    <ul>
+      <li><strong>GPS code</strong> → localisation + lien Google Maps + niveau de batterie</li>
+      <li><strong>RING code</strong> → sonnerie forte + flash + vibration pendant quelques secondes</li>
+    </ul>
+    <p>
+      Le code secret peut être choisi librement (chiffres, lettres…). Il n’est connu que de vous.
+    </p>
+
+    <h2>2. L’application fonctionne-t-elle sans Internet ?</h2>
+    <p>
+      Oui. <strong>Toutes les commandes passent uniquement par SMS.</strong>
+      Aucune connexion Wi-Fi ou données mobiles n’est nécessaire
+      sur le téléphone perdu ni sur le téléphone qui envoie la commande.
+    </p>
+
+    <h2>3. Quelles autorisations sont nécessaires et pourquoi ?</h2>
+    <p>
+      Pour fonctionner correctement, l’application a besoin de plusieurs autorisations :
+    </p>
+    <ul>
+      <li><strong>Localisation (toujours autoriser)</strong> :
+        permet d’obtenir la position GPS quand vous envoyez la commande <strong>GPS</strong>.</li>
+      <li><strong>SMS</strong> :
+        pour lire le SMS entrant contenant la commande et envoyer la réponse.</li>
+      <li><strong>Notifications</strong> :
+        pour afficher l’état de la recherche GPS et certaines alertes.</li>
+      <li><strong>Caméra</strong> :
+        uniquement pour activer le <strong>flash</strong> lors de la commande <strong>RING</strong>.</li>
+    </ul>
+    <p>
+      Sans ces autorisations, l’application ne pourra pas localiser le téléphone ni répondre par SMS.
+    </p>
+
+    <h2>4. Mes données sont-elles envoyées sur un serveur ?</h2>
+    <p>
+      <strong>Non.</strong> L’application ne collecte pas vos données et ne les envoie jamais sur Internet.
+      Les SMS sont échangés uniquement entre votre téléphone et le téléphone perdu.
+    </p>
+
+    <h2>5. À quoi sert le code secret ?</h2>
+    <p>
+      Le code secret sécurise l’application : seules les commandes contenant ce code sont exécutées.
+      Un SMS sans code secret est ignoré. Cela évite qu’une personne extérieure
+      ne déclenche les commandes par hasard.
+    </p>
+
+    <h2>6. Quelle précision GPS puis-je obtenir ?</h2>
+    <ul>
+      <li><strong>En extérieur :</strong> quelques mètres dans la plupart des cas.</li>
+      <li><strong>En intérieur :</strong> la précision peut être réduite (10 à 30 m ou plus).</li>
+    </ul>
+    <p>
+      La précision dépend aussi du modèle de téléphone, de la qualité de la puce GPS,
+      et de l’environnement (bâtiments, météo, etc.).
+    </p>
+
+    <h2>7. L’application fonctionne-t-elle sur un téléphone double SIM ?</h2>
+    <p>
+      Oui. L’application fonctionne sur les téléphones double SIM.
+      Au moins une des cartes SIM doit pouvoir envoyer et recevoir des SMS.
+    </p>
+    <p>
+      Selon les appareils, il peut être nécessaire de définir une
+      <strong>SIM par défaut pour les SMS</strong> dans les paramètres du téléphone.
+    </p>
+
+    <h2>8. Le téléphone sonnera-t-il même en mode silencieux ?</h2>
+    <p>
+      Oui. La commande <strong>RING</strong> force une sonnerie forte,
+      active le flash et la vibration, même si le téléphone est en mode silencieux
+      ou vibreur (dans la limite des capacités de l’appareil).
+    </p>
+
+    <h2>9. Pourquoi désactiver « Gérer l’application si inutilisée » ?</h2>
+    <p>
+      Sur certaines versions d’Android, une option peut
+      <strong>retirer automatiquement les autorisations</strong>
+      si l’application n’est pas utilisée pendant plusieurs mois.
+    </p>
+    <p>
+      Il est recommandé de désactiver cette option pour SMS Phone Locator afin que
+      les autorisations SMS et GPS restent actives même si vous n’ouvrez pas l’app
+      pendant longtemps.
+    </p>
+
+    <h2>10. Faut-il définir l’application comme appli SMS par défaut ?</h2>
+    <p>
+      <strong>Non.</strong> L’application fonctionne en arrière-plan et n’a pas besoin
+      d’être l’appli SMS par défaut. Vous pouvez garder votre application SMS habituelle.
+    </p>
+
+    <h2>11. Et si les commandes ne fonctionnent toujours pas ?</h2>
+    <p>
+      Si malgré tout la commande GPS/RING ne fonctionne pas (aucune réponse, seulement
+      l’accusé de réception, téléphone Pixel ou Xiaomi, problèmes de RCS/Chat, etc.),
+      veuillez consulter le guide complet :
+      <a href="troubleshooting.html">Dépannage / Troubleshooting</a>.
+    </p>
+
+    <div class="separator">🇬🇧 English version below</div>
+
+    <!-- ========================================================= -->
+    <!-- ENGLISH VERSION -->
+    <!-- ========================================================= -->
+
+    <h1>FAQ – SMS Phone Locator</h1>
+    <p class="meta">Last updated: 2025</p>
+
+    <p>
+      This page answers the most common questions about
+      <strong>SMS Phone Locator</strong>: how it works, required permissions,
+      dual SIM, GPS accuracy, etc.
+      For more complex issues (Google Pixel, Xiaomi, RCS/Chat…), please see the
+      <a href="troubleshooting.html">Dépannage / Troubleshooting</a> page.
+    </p>
+
+    <h2>1. How does SMS Phone Locator work?</h2>
+    <p>
+      The app runs in the background on the phone you want to protect.
+      When it receives an SMS containing your <strong>secret code</strong> and a command, it performs the action:
+    </p>
+    <ul>
+      <li><strong>GPS code</strong> → sends back a Google Maps link and battery level</li>
+      <li><strong>RING code</strong> → rings loudly, flashes and vibrates for a few seconds</li>
+    </ul>
+    <p>The secret code is chosen by you and only commands containing it are executed.</p>
+
+    <h2>2. Does the app work without Internet?</h2>
+    <p>
+      Yes. <strong>All commands are sent via SMS only.</strong>
+      No Wi-Fi or mobile data connection is required on either phone.
+    </p>
+
+    <h2>3. Which permissions are required and why?</h2>
+    <p>The app needs the following permissions:</p>
+    <ul>
+      <li><strong>Location (Always allow)</strong>: to obtain the GPS position when you send the <strong>GPS</strong> command.</li>
+      <li><strong>SMS</strong>: to read incoming SMS with the command and send the reply.</li>
+      <li><strong>Notifications</strong>: to show GPS search status and alerts.</li>
+      <li><strong>Camera</strong>: only used to turn on the <strong>flash</strong> for the <strong>RING</strong> command.</li>
+    </ul>
+
+    <h2>4. Is any data uploaded to servers?</h2>
+    <p>
+      <strong>No.</strong> The app does not collect or upload your data.
+      SMS are exchanged only between your phones.
+    </p>
+
+    <h2>5. Why use a secret code?</h2>
+    <p>
+      The secret code protects you: only messages containing the correct code are processed.
+      Other SMS are ignored.
+    </p>
+
+    <h2>6. How accurate is the GPS?</h2>
+    <ul>
+      <li><strong>Outdoors:</strong> usually a few meters.</li>
+      <li><strong>Indoors:</strong> accuracy may drop to around 10–30 m or more.</li>
+    </ul>
+    <p>
+      Accuracy also depends on the phone model, GPS chip quality and environment.
+    </p>
+
+    <h2>7. Does it work on dual SIM phones?</h2>
+    <p>
+      Yes. The app works on dual SIM devices as long as at least one SIM can send and receive SMS.
+      On some devices you may need to choose a <strong>default SIM for SMS</strong>.
+    </p>
+
+    <h2>8. Will the phone ring even in silent mode?</h2>
+    <p>
+      Yes. The <strong>RING</strong> command forces a loud ring, flash and vibration,
+      even if the phone is in silent or vibrate mode (within the phone’s limitations).
+    </p>
+
+    <h2>9. Why disable “Remove permissions if app is unused”?</h2>
+    <p>
+      Some Android versions can automatically <strong>revoke permissions</strong>
+      for apps that are not opened for several months.
+      We recommend disabling this option for SMS Phone Locator so that SMS and GPS
+      permissions stay active.
+    </p>
+
+    <h2>10. Do I need to set it as the default SMS app?</h2>
+    <p>
+      <strong>No.</strong> The app runs in the background and does not need to be the default SMS app.
+      You can keep your usual messaging app.
+    </p>
+
+    <h2>11. Still having issues?</h2>
+    <p>
+      If commands still do not work (no reply, only delivery reports, specific issues on Pixel/Xiaomi,
+      RCS/Chat problems, etc.), please refer to the full
+      <a href="troubleshooting.html">Dépannage / Troubleshooting</a> guide.
+    </p>
+
+  </main>
+</body>
+</html>
