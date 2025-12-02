@@ -42,6 +42,13 @@
       font-weight: 700;
       letter-spacing: .5px;
     }
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -57,7 +64,7 @@
 
     <p>Voici les réponses aux questions les plus fréquentes concernant l'application
     <strong>SMS Phone Locator</strong> : localisation par SMS, commande RING, double SIM,
-    précision GPS, désactivation RCS/Chat, etc.</p>
+    précision GPS, etc.</p>
 
 
     <h2>1. La commande GPS ne fonctionne pas, que faire ?</h2>
@@ -68,197 +75,7 @@
     <p><strong>Solution :</strong> envoyer une phrase complète, par exemple :</p>
     <p><em>« Peux-tu te localiser avec GPS code ? »</em></p>
     <p>L’application détecte la commande <strong>où qu’elle soit</strong> dans le message.</p>
-    <p><strong>Si ça ne fonctionne toujours pas, aller au paragraphe 10 (RCS/CHAT).</strong></p>
-
-
-    <h2>2. L’application fonctionne-t-elle sans Internet ?</h2>
-    <p>Oui : l'app fonctionne uniquement via SMS. Aucun Internet requis.</p>
-
-
-    <h2>3. Mes données sont-elles envoyées sur un serveur ?</h2>
-    <p><strong>Non.</strong> L’application ne collecte rien et n’envoie rien sur Internet.</p>
-
-
-    <h2>4. À quoi sert le code secret ?</h2>
-    <p>Il sécurise l’application : seules les commandes contenant ce code sont exécutées.</p>
-
-
-    <h2>5. Quelle précision GPS puis-je obtenir ?</h2>
-    <ul>
-      <li><strong>Extérieur :</strong> quelques mètres</li>
-      <li><strong>Intérieur :</strong> 10 à 30 m</li>
-      <p></p>La précision dépend aussi du modèle de téléphone et de la qualité de la puce GPS.</p>
-    </ul>
-
-
-    <h2>6. L’application fonctionne-t-elle sur un téléphone double SIM ?</h2>
-    <p>Oui. Au moins une SIM doit pouvoir envoyer et recevoir des SMS.</p>
-    <p>Selon les appareils, il faut définir une <strong>SIM par défaut pour les SMS</strong>.</p>
-
-
-    <h2>7. Le téléphone sonnera-t-il même en mode silencieux ?</h2>
-    <p>Oui : sonnerie forte + flash + vibration.</p>
-
-
-    <h2>8. Pourquoi désactiver « Gérer l’application si inutilisée » ?</h2>
     <p>
-      Android peut retirer les permissions automatiquement.
-      Désactivez cette option pour garantir le fonctionnement continu.
-    </p>
-
-
-    <h2>9. Faut-il définir l’application comme appli SMS par défaut ?</h2>
-    <p><strong>Non</strong>. L’application fonctionne parfaitement sans être l’appli SMS par défaut.</p>
-
-
-    <!-- --------------------------------------------------------- -->
-    <!--  SECTION RCS / CHAT -->
-    <!-- --------------------------------------------------------- -->
-
-    <h2>10. Dois-je désactiver le mode “Chat” / RCS pour que les commandes fonctionnent ?</h2>
-
-    <p><strong>Oui.</strong> Sur certains téléphones (Google Messages, Samsung Messages…),
-    le mode <strong>RCS / Messages “Chat”</strong> remplace les SMS classiques.</p>
-
-    <p>Dans ce mode :</p>
-    <ul>
-      <li>Les messages partent en RCS (Internet), pas en SMS</li>
-      <li>Le téléphone perdu ne reçoit rien</li>
-      <li>L’application ne détecte aucune commande</li>
-    </ul>
-
-    <h3>Comment désactiver le RCS / Chat ?</h3>
-
-    <p><strong>Google Messages :</strong></p>
-    <ul>
-      <li>Ouvrir Messages</li>
-      <li>Menu ⋮ → <em>Paramètres</em></li>
-      <li><strong>Fonctionnalités de chat</strong></li>
-      <li>Désactiver « Activer les fonctionnalités de chat »</li>
-    </ul>
-
-    <p><strong>Samsung Messages :</strong></p>
-    <ul>
-      <li>Ouvrir Messages</li>
-      <li>Menu ⋮ → <em>Paramètres</em></li>
-      <li><strong>Fonctionnalités de chat</strong></li>
-      <li>Désactiver le mode chat / RCS</li>
-    </ul>
-
-    <p><strong>Indicateurs que RCS est actif :</strong></p>
-    <ul>
-      <li>“Message par chat”</li>
-      <li>“Message sécurisé”</li>
-      <li>“Envoyé par RCS”</li>
-    </ul>
-
-
-    <h2>11. Une commande ne fonctionne toujours pas : que vérifier ?</h2>
-    <p>Sur le téléphone perdu :</p>
-    <ul>
-      <li>RCS / Chat désactivé</li>
-      <li>Autorisation SMS activée</li>
-      <li>Localisation → “Toujours autoriser”</li>
-      <li>Batterie → Sans restriction</li>
-      <li>Au moins une SIM active</li>
-      <li>Message contenant <strong>GPS code</strong> ou <strong>RING code</strong></li>
-    </ul>
-
-
-    <div class="separator">🇬🇧 English version below</div>
-
-
-    <!-- ========================================================= -->
-    <!-- VERSION ENGLISH -->
-    <!-- ========================================================= -->
-
-    <h1>FAQ – SMS Phone Locator</h1>
-    <p class="meta">Last updated: 2025</p>
-
-    <h2>1. The GPS command does not work</h2>
-    <p>Some phones filter very short SMS like “GPS code”.  
-    Solution: send a longer message such as  
-    <em>“Can you locate yourself using GPS code?”</em></p>
-    <p><strong>If it still doesn’t work, go to paragraph 10 (RCS/CHAT).</strong></p>
-
-
-    <h2>2. Does the app work without Internet?</h2>
-    <p>Yes. The app works entirely through SMS.</p>
-
-
-    <h2>3. Is any data uploaded?</h2>
-    <p>No. The app works fully offline and never sends data to servers.</p>
-
-
-    <h2>4. Why use a secret code?</h2>
-    <p>Only messages containing the code are processed.</p>
-
-
-    <h2>5. How accurate is the GPS?</h2>
-    <ul>
-      <li>Outdoors: a few meters</li>
-      <li>Indoors: 10–30 m</li>
-    </ul>
-
-
-    <h2>6. Dual SIM support?</h2>
-    <p>Yes. At least one SIM must be able to send/receive SMS.</p>
-
-
-    <h2>7. Will the phone ring even in silent mode?</h2>
-    <p>Yes. The RING command triggers loud sound, flash and vibration.</p>
-
-
-    <h2>8. Why disable “Remove permissions if unused”?</h2>
-    <p>Android may revoke SMS/GPS permissions automatically.</p>
-
-
-    <h2>9. Do I need to set the app as default SMS app?</h2>
-    <p>No.</p>
-
-
-    <!-- RCS ENGLISH VERSION -->
-    <h2>10. Do I need to disable “Chat” / RCS?</h2>
-
-    <p><strong>Yes.</strong> Chat/RCS uses Internet instead of SMS.</p>
-
-    <p>In this mode:</p>
-    <ul>
-      <li>Commands are not sent as SMS</li>
-      <li>The lost phone receives nothing</li>
-      <li>The app cannot detect the command</li>
-    </ul>
-
-    <h3>How to disable RCS?</h3>
-
-    <p><strong>Google Messages:</strong></p>
-    <ul>
-      <li>Open Messages</li>
-      <li>⋮ → Settings</li>
-      <li>Chat features</li>
-      <li>Disable “Enable chat features”</li>
-    </ul>
-
-    <p><strong>Samsung Messages:</strong></p>
-    <ul>
-      <li>Open Messages</li>
-      <li>⋮ → Settings</li>
-      <li>Chat features</li>
-      <li>Turn off Chat / RCS</li>
-    </ul>
-
-
-    <h2>11. Commands still not working?</h2>
-    <p>Check on the lost phone:</p>
-    <ul>
-      <li>RCS disabled</li>
-      <li>SMS permission enabled</li>
-      <li>Location → Always allow</li>
-      <li>Battery → Unrestricted</li>
-      <li>One SIM active</li>
-      <li>Correct command spelling</li>
-    </ul>
-
-  </main>
-</body>
-</html>
+      Si la commande ne fonctionne toujours pas, consultez la page
+      <a href="troubleshooting.html">Dépannage / Troubleshooting</a>
+      pour les vér
